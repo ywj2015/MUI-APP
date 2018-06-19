@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<h1 class="mui-title">我的</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a>
+						<img class="mui-media-object mui-pull-left" src="../images/qq.png" />
+						<div class="mui-media-body">
+							<label id="account">请登录</label>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="position: relative;top: 5px;font-size: 15px;">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="../view/setting.html"><span class="mui-icon mui-icon-gear-filled" style="color: red;"></span>&nbsp;&nbsp;设置</a>
+				</li>
+				<li class="mui-table-view-cell" id="guanzhu">
+					<a class="mui-navigate-right"><span class="mui-icon iconfont icon-guanzhu" style="color: #6641E2;"></span>&nbsp;&nbsp;我的关注</a>
+				</li>
+				<li class="mui-table-view-cell" id="fans">
+					<a class="mui-navigate-right"><span class="mui-icon iconfont icon-fensi" style="color: #6641E2;"></span>&nbsp;&nbsp;我的粉丝</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right"><span class="mui-icon mui-icon-email-filled" style="color: #6641E2;"></span>&nbsp;&nbsp;评论消息</a>
+				</li>
+				<li class="mui-table-view-cell" id="shoucang">
+					<a class="mui-navigate-right"><span class="mui-icon iconfont icon-shoucang" style="color: yellow;"></span>&nbsp;&nbsp;收藏夹</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right"><span class="mui-icon iconfont icon-QQqun"></span>&nbsp;&nbsp;公众号与QQ群</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="advice.html"><span class="mui-icon iconfont icon-fabu"></span>&nbsp;&nbsp;意见和建议</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="about.html"><span class="mui-icon mui-icon-info"></span>&nbsp;&nbsp;关于</a>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var login = document.getElementsByClassName("mui-table-view")[0];
+			login.addEventListener("tap",function() {
+				mui.openWindow({
+					url: '../login.html',
+				})
+			})
+			
+			var account = document.getElementById("account");
+			account.innerHTML = localStorage.getItem("account");
+			
+			var fans = document.getElementById("fans");
+			fans.addEventListener("tap",function() {
+				mui.openWindow("fans.html");
+			});
+			
+			var guanzhu = document.getElementById("guanzhu");
+			guanzhu.addEventListener("tap",function() {
+				mui.openWindow("guanzhu.html");
+			});
+			
+			var shoucang = document.getElementById("shoucang");
+			shoucang.addEventListener("tap",function() {
+				mui.openWindow("shoucang.html");
+			});
+		</script>
+	</body>
+
+</html>

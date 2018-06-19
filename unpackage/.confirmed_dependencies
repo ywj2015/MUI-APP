@@ -1,0 +1,87 @@
+{
+  "login.html": {
+    "refer": [
+      "main.html",
+      "reg.html",
+      "forget_password.html",
+      "view/reg.html",
+      "index.html"
+    ],
+    "resources": []
+  },
+  "reg.html": {
+    "refer": [
+      "login.html"
+    ],
+    "resources": []
+  },
+  "index.html": {
+    "resources": [
+      "view/quotation.html"
+    ],
+    "refer": [
+      "view/quotation.html",
+      "view/found.html",
+      "view/mine.html",
+      "view/mind.html",
+      "mind.html",
+      "found.html",
+      "mine.html",
+      "quotation.html",
+      "guide.html"
+    ]
+  },
+  "guide.html": {
+    "refer": [
+      "index.html"
+    ]
+  },
+  "view/mine.html": {
+    "refer": [
+      "view/about.html",
+      "login.html",
+      "view/advice.html",
+      "view/setting.html",
+      "view/shoucang.html",
+      "view/guanzhu.html",
+      "view/fans.html"
+    ]
+  },
+  "view/about.html": {
+    "refer": [
+      "view/mine.html"
+    ]
+  },
+  "view/setting.html": {
+    "refer": [
+      "view/mine.html"
+    ]
+  },
+  "view/mind.html": {
+    "refer": [
+      "view/more_fm.html",
+      "view/more_test.html",
+      "view/test.html"
+    ]
+  },
+  "view/quotation.html": {
+    "refer": [
+      "view/share.html"
+    ]
+  },
+  "view/more_test.html": {
+    "refer": [
+      "view/test.html"
+    ]
+  },
+  "view/test.html": {
+    "refer": [
+      "view/testing.html"
+    ]
+  },
+  "view/found.html": {
+    "refer": [
+      "view/findWord.html"
+    ]
+  }
+}

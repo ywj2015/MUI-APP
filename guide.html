@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.guide-img {
+				width: 100%;
+			}
+			
+			#start {
+				position: absolute;
+				bottom: 50px;
+				width: 50%;
+				left: 25%;
+			}
+			
+			.mui-slider-indicator .mui-indicator {
+				width: 10px;
+				height: 10px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-slider mui-fullscreen">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item">
+						<a href="javascript:;">
+							<img class="guide-img" src="images/guide-img1.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="javascript:;">
+							<img class="guide-img" src="images/guide-img2.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="javascript:;">
+							<img class="guide-img" src="images/guide-img3.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="javascript:;">
+							<img class="guide-img" src="images/guide-img4.jpg">
+							<button class="mui-btn mui-btn-blue mui-btn-outlined" type="button" id="start">开始体验</button>
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+
+				//	获取系统状态栏高度
+				var sh = plus.navigator.getStatusbarHeight();
+
+				//	获取设备屏幕高度分辨率以及宽度分辨率
+				var h = plus.screen.resolutionHeight;
+				var w = plus.screen.resolutionWidth;
+
+				var imgs = document.querySelectorAll(".guide-img");
+				for(var i = 0, len = imgs.length; i < len; i++) {
+					imgs[i].style.height = (h - sh) + "px";
+					imgs[i].style.width = w + "px";
+				}
+
+				//	 手动关闭启动页
+				plus.navigator.closeSplashscreen();
+				document.getElementById("start").addEventListener("tap", function() {
+
+					//	向本地存储中设置launchFlag的值，即启动标识；
+					plus.storage.setItem("launchFlag", "true");
+					mui.openWindow({
+						url: "index.html",
+						id: "index",
+						extras: {
+							mark: "index" //同样，这里也只是个标识，实际开发中并不用；
+						}
+					});
+				});
+			});
+
+			mui.back = function() {};
+		</script>
+	</body>
+
+</html>

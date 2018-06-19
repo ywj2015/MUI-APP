@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">测试列表</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card" style="position: relative;top: -5px;">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<label style="font-size: 16px;">找出你成功的绊脚石！</label><br />
+						<label style="font-size: 14px;color: darkgrey;">我们都希望事业可以迅速发展，但总有些或大或小的问题阻碍我们前进，可能是外界的原因，也可能是自身的原因。做个测试，一起来找找你的那颗小石头是什么吧。</label>
+					</div>
+					<img src="../images/coffee.jpg" style="width: 95%;height: 50vw;display: block;margin: 0px auto;padding-bottom: 7px;position: relative;top: -3px;"/>
+				</div>
+			</div>
+			<div class="mui-card" style="position: relative;top: -5px;">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<label style="font-size: 16px;">你是上帝创造的哪个特殊人？</label><br />
+						<label style="font-size: 14px;color: darkgrey;">你会是被上帝当作珍品投入无限期待的一个吗？上帝大手一挥就创造了人类，而你就是其中一个你会成为无数人中最平凡的一个，还是能够成为他人的先驱？属于你的位置在哪？</label>
+					</div>
+					<img src="../images/coffee.jpg" style="width: 95%;height: 50vw;display: block;margin: 0px auto;padding-bottom: 7px;position: relative;top: -3px;"/>
+				</div>
+			</div>
+			<div class="mui-card" style="position: relative;top: -5px;">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<label style="font-size: 16px;">你是上帝创造的哪个特殊人？</label><br />
+						<label style="font-size: 14px;color: darkgrey;">你会是被上帝当作珍品投入无限期待的一个吗？上帝大手一挥就创造了人类，而你就是其中一个你会成为无数人中最平凡的一个，还是能够成为他人的先驱？属于你的位置在哪？</label>
+					</div>
+					<img src="../images/coffee.jpg" style="width: 95%;height: 50vw;display: block;margin: 0px auto;padding-bottom: 7px;position: relative;top: -3px;"/>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				var card = document.getElementsByClassName("mui-card");
+				for(var i = 0;i < card.length;i ++) {
+					card[i].addEventListener('tap',function() {
+						mui.openWindow("test.html");
+					});
+				};
+			})
+		</script>
+	</body>
+
+</html>

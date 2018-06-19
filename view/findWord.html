@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id="back"></a>
+			<h1 class="mui-title">文章</h1>
+		</header>
+		<div class="mui-content" style="position: relative;top: -16px;">
+			<ul class="mui-table-view" id="body">
+				<li class="mui-table-view-cell mui-media" >
+					<a>
+						<img class="mui-media-object mui-pull-left" src="../images/qq.png" />
+						<div class="mui-media-body">
+							<label id="person">王汉三</label>
+							<i style="position: absolute;top:32px;left: 60px;">2018-06-18</i>
+						</div>
+					</a>
+					<button style="background-color: green;color: white; width: 20%;position: absolute;right: 25px;top: 18px;" id="gzBtn">+ 关注</button>
+				</li>
+			</ul>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<label style="font-size: 16px;">人生过的是心情，生活活的是心态</label>
+					</div>
+					<div class="mui-card-content-inner">
+						<label style="font-size: 14px;">当你辛辛苦苦的努力讨好一个人，为她做各种事情，你却发现她只是为了逗你，而你却还像个傻子一样继续努力地为她做她让你做的事，明明知道不可能却还是那么的想讨好她，让她回头。</label>
+					</div>
+					<div class="mui-card-content-inner">
+						<label style="font-size: 14px;">当你辛辛苦苦的努力讨好一个人，为她做各种事情，你却发现她只是为了逗你，而你却还像个傻子一样继续努力地为她做她让你做的事，明明知道不可能却还是那么的想讨好她，让她回头。</label>
+					</div>
+					<div class="mui-card-content-inner">
+						<label style="font-size: 14px;">当你辛辛苦苦的努力讨好一个人，为她做各种事情，你却发现她只是为了逗你，而你却还像个傻子一样继续努力地为她做她让你做的事，明明知道不可能却还是那么的想讨好她，让她回头。</label>
+					</div>
+					<div class="mui-card-content-inner">
+						<label style="font-size: 14px;">当你辛辛苦苦的努力讨好一个人，为她做各种事情，你却发现她只是为了逗你，而你却还像个傻子一样继续努力地为她做她让你做的事，明明知道不可能却还是那么的想讨好她，让她回头。</label>
+					</div>
+					<div class="mui-card-content-inner">
+						<label style="font-size: 14px;">当你辛辛苦苦的努力讨好一个人，为她做各种事情，你却发现她只是为了逗你，而你却还像个傻子一样继续努力地为她做她让你做的事，明明知道不可能却还是那么的想讨好她，让她回头。</label>
+					</div>
+					<div class="mui-card-content-inner">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell" style="width: 35%;border-bottom: 3px solid black;">评论列表 <label style="font-size: 12px;">1条</label></li>
+							<li class="mui-table-view-cell mui-media" style="height: auto;">
+								<a>
+									<img class="mui-media-object mui-pull-left" src="../images/qq.png" style="margin-right: 20px;width: 32px;height: 32px;" />
+									<div class="mui-media-body">
+										<label style="position: absolute;top: 15px;">王汉三</label>
+										<label style="position: absolute;right: 0px;">3小时前</label>
+									</div>
+								</a>
+								<label style="margin-left: 50px;">心态决定你的一切！</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var guanzhu = document.getElementById("gzBtn");
+			var person = document.getElementById("person");
+			
+			guanzhu.innerHTML = localStorage.getItem("word");
+			guanzhu.style.background = localStorage.getItem("color2");
+			
+			
+			var i = 0;
+			guanzhu.addEventListener("tap",function() {
+				i ++;
+				if(i % 2 == 1) {
+					localStorage.setItem("guanzhu",person.innerHTML);
+					localStorage
+					guanzhu.innerHTML = "已关注";
+					localStorage.setItem('word',guanzhu.innerHTML);
+					localStorage.setItem('color2',"darkgrey");
+					guanzhu.style.background = localStorage.getItem("color2");
+				} else {
+					guanzhu.innerHTML = "+关注";
+					localStorage.setItem('word',guanzhu.innerHTML);
+					localStorage.setItem('color2',"green");
+					guanzhu.style.background = localStorage.getItem("color2");
+					
+					localStorage.removeItem("word");
+					localStorage.removeItem("color2");
+				}
+			})
+		</script>
+	</body>
+
+</html>

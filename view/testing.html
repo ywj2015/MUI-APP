@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			#p1 {
+				width: 95%;
+				display: block;
+				margin: 0 auto;
+				position: relative;	
+				top: -205px;
+				font-size: 16px;
+			}
+			
+			.mui-checkbox {
+				position: relative;
+				top: -175px;
+			}
+			
+			#test {
+				display: none;
+				width: 60%;
+				height: 45px;
+				background: rgb(76,217,100);
+				color: white;
+				margin-top: -95px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+	
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id="back"></a>
+			<h1 class="mui-title">心理测试</h1>
+		</header>
+		<div class="mui-content">
+			<img src="../images/books.jpg" style="height: 50vw;width: 100%;"/>
+			<textarea name="" value="" disabled="disabled" rows="10" cols="" style="position: relative;top: -6px;text-align: left;">
+				找出你成功的绊脚石
+			</textarea>
+			<p id="p1">1.找工作的时候，你是否只把简历投给大公司？</p>
+			<div class="mui-input-row mui-checkbox mui-left">
+				<label id="l1">是</label>
+				<input name="checkbox1" class="box" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+				<label id="l2">否</label>
+				<input name="checkbox1" class="box" type="checkbox">
+			</div>
+			<button id="test">开始测试</button>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-input-row').on('change', 'input', function() {
+			 	var text = document.getElementById('p1');
+			 	var test = document.getElementById('test');
+			 	var input = document.getElementsByClassName('mui-input-row');
+	            if (this.checked) {
+	            	text.innerHTML = "2.你是否常常向你的上级要求超过自己能力的工作任务？";
+	            	test.style.display = "block";
+	            	test.innerHTML = "结束测试";
+	          		test.onclick = function() {
+	          			input[0].style.display = "none";
+	          			input[1].style.display = "none";
+	          			text.innerHTML = '我的测试结果是： A. 绊脚小石头：张狂有余，谦虚不足';
+	          			text.innerHTML +=  "</br></br>" +
+	          				 "你是一个喜欢出风头的人，在稳定的社会或群体中，你总是很快表明立场，生怕没有注意到自己。其实你这样做是为了掩盖内心的虚弱。同时，你希望年纪轻轻就功成名就，但是又不擅长学习、求助或征求意见，这样就不容易得到领导和同事的信任和重视了哦！小贴士：不论你是高管还是基层，都不妨放低自己的姿态，学习谦虚的态度和平和的与人相处之道。";
+	          			test.style.display = 'none';
+	          		}
+	            }
+	    	});
+		</script>
+	</body>
+
+</html>

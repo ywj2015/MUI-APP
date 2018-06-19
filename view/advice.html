@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				text-align: center;
+			}
+			
+			#submit {
+				width: 50%;
+				height: 40px;
+				background: rgb(76,217,100);
+				color: white;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">意见和建议</h1>
+		</header>
+		<div class="mui-content" style="margin-top: 10px;">
+			<p style="text-indent: 2em;width: 92%;margin: 0 auto;color: black;line-height: 30px;letter-spacing: 1px;">
+				为了让“早安语录”更好的发展，希望您多提一些宝贵的意见和建议。比如您对APP的一些想法以及APP功能模块的欠缺或者希望的新模块的添加。
+			</p>
+			<p style="text-indent: 2em;width: 92%;margin: 0 auto;color: black;line-height: 30px;letter-spacing: 1px;">
+				在这里感谢您一直以来对“早安语录”的支持。
+			</p>
+			<textarea rows="3" cols="15" placeholder="请输入您想要填的意见和建议" required="required" style="width: 92%;display: block;margin: 0 auto;"></textarea>
+			<input type="button" id="submit" value="提交" />
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var btn = document.getElementById("submit");
+			var text = document.getElementsByTagName("textarea")[0];
+			btn.addEventListener("tap",function() {
+				mui.toast("您已发送您宝贵的意见！");
+				text.value = null;
+			},300);
+		</script>
+	</body>
+
+</html>

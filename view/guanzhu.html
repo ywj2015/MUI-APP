@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id="back"></a>
+			<h1 class="mui-title">我的关注</h1>
+		</header>
+		<div class="mui-content">
+			<!--<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a>
+						<img class="mui-media-object mui-pull-left" src="../images/ocean.jpg" />
+						<div class="mui-media-body">
+							<label id="person" style="position: absolute;top: 25px;left: 75px;">王汉三</label>
+						</div>
+					</a>
+					<button style="background-color: green;color: white; width: 20%;position: absolute;right: 25px;top: 18px;background: darkgray;" id="gzBtn">已关注</button>
+				</li>
+			</ul>-->
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var body = document.getElementsByClassName("mui-content");
+			if(localStorage.getItem("guanzhu") != null) {
+				body[0].innerHTML =  '<ul class="mui-table-view"><li class="mui-table-view-cell mui-media" ><a><img class="mui-media-object mui-pull-left" src="../images/ocean.jpg" /><div class="mui-media-body"><label id="person" style="position: absolute;top: 25px;left: 75px;font-size: 18px">' + localStorage.getItem("guanzhu") + '</label></div></a></li></ul>';
+			} else {
+				body[0].innerHTML = "";
+			}
+		</script>
+	</body>
+
+</html>

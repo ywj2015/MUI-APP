@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.mui-slider-indicator {
+				position: absolute;
+				top: 280px;
+			}
+			
+			.mui-slider-indicator .mui-indicator {
+				width: 6px;
+				height: 6px;
+			}
+			
+			.mui-col-sm-3,.mui-col-sm-6 {
+				background-color: darkgray;
+				/*opacity: 0.5;*/
+				color: black;
+				height: 80px;
+				text-align: center;
+				line-height: 65px;
+				border-radius: 2px;
+			}
+			
+			.mui-col-sm-3 {
+				border-right: 5px solid white;
+			}
+			
+			.mui-media {
+				height: 20vw;
+			}
+			
+			.mui-media .mui-ellipsis {
+				font-size: 13px;
+			}
+		</style>
+	</head>
+
+	<body>
+	<div class="mui-content">
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="javascript:;">
+						<img src="../images/card2.jpg">
+					</a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="javascript:;">
+						<img src="../images/card2.jpg">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="javascript:;">
+						<img src="../images/coffee.jpg">
+					</a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="javascript:;">
+						<img src="../images/ocean.jpg">
+					</a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="javascript:;">
+						<img src="../images/lighthouse.jpg">
+					</a>
+				</div>
+				<!-- 第五张 -->
+				<div class="mui-slider-item">
+					<a href="javascript:;">
+						<img src="../images/sailing-boat.jpg">
+					</a>
+				</div>
+				<!--额外增加的一个节点(循环轮播：最后一个节点是第一张轮播)-->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="javascript:;">
+						<img src="../images/card2.jpg">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<div class="mui-row" style="padding-top: 12px;width: 92%;margin: 0 auto;">
+			<div class="mui-col-sm-3 word">
+        		<div class="mui-table-view-cell">
+                	文章    
+        		</div>
+    		</div>
+    		<div class="mui-col-sm-3 word">
+        		<div class="mui-table-view-cell">
+                	远方    
+        		</div>
+    		</div>
+    		<div class="mui-col-sm-6 word">
+        		<div class="mui-table-view-cell">
+                	三行情书   
+        		</div>
+    		</div>
+		</div>
+		<div class="mui-row" style="border-top: 5px solid white;width: 92%;margin: 0 auto;">
+			<div class="mui-col-sm-3 word">
+        		<div class="mui-table-view-cell">
+                	话题   
+        		</div>
+    		</div>
+    		<div class="mui-col-sm-3 word">
+        		<div class="mui-table-view-cell">
+                	专题   
+        		</div>
+    		</div>
+    		<div class="mui-col-sm-6 word">
+        		<div class="mui-table-view-cell">
+                	文学人物   
+        		</div>
+    		</div>
+		</div>
+	</div>
+	<div class="mui-content">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media word">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right" src="../images/warm.jpg">
+					<div class="mui-media-body">
+						时间识人，落难知心
+						<p class='mui-ellipsis'>时间识人，落难知心。不经历一事，不懂得一人。时间，是最好的过滤器。岁月，是最真的分辨仪。一个人是真心，是假意，不在嘴上，而在心上！</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media word">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right" src="../images/coffee.jpg">
+					<div class="mui-media-body">
+						所有的失去，都会以另一种方式归来
+						<p class='mui-ellipsis'>时间识人，落难知心。不经历一事，不懂得一人。时间，是最好的过滤器。岁月，是最真的分辨仪。一个人是真心，是假意，不在嘴上，而在心上！</p>
+					</div>	
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media word">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-right" src="../images/sailing-boat.jpg">
+					<div class="mui-media-body">
+						谁不是一边哭泣，一边咬牙坚持！
+						<p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		var slider = document.getElementById('slider');
+		var group = slider.querySelector('.mui-slider-group');
+		var items = mui('mui-slider-item', group);
+
+		var slider = mui('#slider');
+		slider.slider({
+			interval: 3000
+		});
+		
+		var sameWord = document.getElementsByClassName("word");
+//		console.log(sameWord.length);
+		for(var i = 0;i < sameWord.length;i ++) {
+			sameWord[i].addEventListener("tap",function() {
+				mui.openWindow("findWord.html");
+			})
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<style type="text/css">
+			#popover {
+				position: fixed;
+				width: 100%;
+				height: 200px;
+				background: red;
+				top: -50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-tab">
+			<a href="view/quotation.html" class="mui-tab-item mui-active">
+				<span class="mui-icon mui-icon-home"><span class="mui-badge">5</span></span>
+				<span class="mui-tab-label">语录</span>
+			</a>
+			<a href="view/found.html" class="mui-tab-item">
+				<span class="mui-icon iconfont icon-Shapecopy"></span>
+				<span class="mui-tab-label">发现</span>
+			</a>
+			<a href="view/mind.html" class="mui-tab-item">
+				<span class="mui-icon iconfont icon-xinlixue"></span>
+				<span class="mui-tab-label">心理</span>
+			</a>
+			<a href="view/mine.html" class="mui-tab-item">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+		<div id="popover" class="box mui-popover mui-popover-action mui-popover-bottom">
+			dfsaddgagfagfadagda
+		</div>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+		mui.plusReady(function() {
+			var launchFlag = plus.storage.getItem("launchFlag");
+//			if(launchFlag) {
+//				mui.openWindow({
+//					url: "index.html",
+//					id: "index",
+//					extras: {
+//						mark: "index" //额外的参数，仅仅是个标识，实际开发中不用；  
+//					}
+//				});
+//			} else {
+				mui.openWindow({
+					url: "guide.html",
+					id: "guide"
+				});
+			}
+		});
+		mui.plusReady(function() {
+			var index = 0;
+			var subpages = ['view/quotation.html', 'view/found.html', 'view/mind.html', 'view/mine.html'];
+			//获取当前页面所属的Webview窗口对象  
+			var self = plus.webview.currentWebview();
+			var subpageStyle = {
+				top: '0px',
+				bottom: '50px',
+			};
+
+			for(var i = 0; i < subpages.length; i++) {
+				//创建webview子页  
+				var sub = plus.webview.create(
+					subpages[i], //子页url  
+					subpages[i], //子页id  
+					subpageStyle
+				);
+				if(i != index) {
+					sub.hide();
+				}
+
+				//将webview对象填充到窗口  
+				self.append(sub);
+			}
+
+			//当前激活选项  
+			var activeTab = subpages[index];
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				//获取子页面的id  
+				var targetTab = this.getAttribute('href');
+				if(activeTab == targetTab) {
+					return;
+				}
+				//显示目标选项卡  
+				plus.webview.show(targetTab);
+				//隐藏当前选项卡  
+				plus.webview.hide(activeTab);
+				//更改当前活跃选项卡  
+				activeTab = targetTab;
+			});
+		});
+		
+/*		document.getElementById("click").addEventListener("tap", function() {  
+                //调用隐藏/显示弹出层  
+                mui("#popover").popover('toggle', document.getElementById("div"));  
+        });  */
+	
+	</script>
+</html>
